@@ -19,10 +19,7 @@ class MaskBlock(torch.nn.Module):
     self.mask_block_config = mask_block_config
     output_size = mask_block_config.output_size
 
-    if mask_block_config.input_layer_norm:
-      self._input_layer_norm = torch.nn.LayerNorm(input_dim)
-    else:
-      self._input_layer_norm = None
+    self._input_layer_norm = None
 
     if mask_block_config.reduction_factor:
       aggregation_size = int(mask_input_dim * mask_block_config.reduction_factor)
