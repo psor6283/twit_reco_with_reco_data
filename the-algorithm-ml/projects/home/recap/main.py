@@ -80,6 +80,8 @@ def run(unused_argv: str, data_service_dispatcher: Optional[str] = None):
 
   datetime_str = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M")
   print(f"{datetime_str}\n", end="")
+  
+  FLAGS.debug_loop = True
 
   if FLAGS.debug_loop:
     logging.warning("Running debug mode, slow!")
